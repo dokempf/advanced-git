@@ -126,37 +126,36 @@ Uploading LFS objects: 100% (1/1), 17 B | 0 B/s, done.
 ~~~
 {: .output}
 
-~~~
-LFS tracking is not limited to explicitly spelled out filenames. Instead, wildcard
-patterns can be passed to `git lfs track`. However, you should be careful to quote
-these patterns, as they might otherwise get expanded by to existing files by your shell.
-For example, tracking all PDFs with LFS could be achieved with the following command:
 
-~~~
-git lfs track "*.pdf"
-~~~
-{: .language-bash}
-~~~
+> ## Tracking with wildcard patterns
+> LFS tracking is not limited to explicitly spelled out filenames. Instead, wildcard
+> patterns can be passed to `git lfs track`. However, you should be careful to quote
+> these patterns, as they might otherwise get expanded by to existing files by your shell.
+> For example, tracking all PDFs with LFS could be achieved with the following command:
+>
+> ~~~
+> git lfs track "*.pdf"
+> ~~~
+> {: .language-bash}
 {: .callout}
 
-~~~
-Although `git lfs` by design solves the problem of storing large files in Git
-repositories, there are some practical hurdles that you should consider before
-introducing LFS into your project:
-
-* The `git lfs` command is a separately maintained extension to the Git core. It is
-  therefore not part of most Git distributions, but needs to be installed separately.
-  Using it in your project will require you to educate your users about LFS and how
-  to install it. Depending on your target audience, you should carefully consider
-  whether the benefits outweigh this disadvantage.
-* Users that do not have `git lfs` installed will not be notified by Git. They
-  will see the files, but the content will be Git metadata instead of the actual content.
-  Trying to work with those files will typically produce cryptic error messages.
-* Some hosting providers - most notably GitHub - apply restrictive quotas to LFS storage.
-  On the free plan, GitHub currently allows 1GB of storage and 1 GB bandwidth per month.
-  As the band width quota counts every single clone by users, **LFS should currently
-  be considered unusable on the GitHub free plan.**
-~~~
+> ## Disadvantages of Git LFS
+> Although `git lfs` by design solves the problem of storing large files in Git
+> repositories, there are some practical hurdles that you should consider before
+> introducing LFS into your project:
+>
+> * The `git lfs` command is a separately maintained extension to the Git core. It is
+>   therefore not part of most Git distributions, but needs to be installed separately.
+>   Using it in your project will require you to educate your users about LFS and how
+>   to install it. Depending on your target audience, you should carefully consider
+>   whether the benefits outweigh this disadvantage.
+> * Users that do not have `git lfs` installed will not be notified by Git. They
+>   will see the files, but the content will be Git metadata instead of the actual content.
+>   Trying to work with those files will typically produce cryptic error messages.
+> * Some hosting providers - most notably GitHub - apply restrictive quotas to LFS storage.
+>   On the free plan, GitHub currently allows 1GB of storage and 1 GB bandwidth per month.
+>   As the band width quota counts every single clone by users, **LFS should currently
+>   be considered unusable on the GitHub free plan.**
 {: .caution}
 
 TODO: Write about `git annex`
