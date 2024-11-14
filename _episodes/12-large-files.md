@@ -16,8 +16,6 @@ keypoints:
 - "Use of Git LFS is discouraged in many scenarios."
 ---
 
-TODO: Installation steps for this episode
-
 Sometimes, you might want to add non-textual data to your Git repositories.
 Examples for such uses cases in a software project are e.g.
 
@@ -157,9 +155,5 @@ Uploading LFS objects: 100% (1/1), 17 B | 0 B/s, done.
 >   As the band width quota counts every single clone by users, **LFS should currently
 >   be considered unusable on the GitHub free plan.**
 {: .caution}
-
-TODO: Write about `git annex`
-
-TODO: Write about other potential solutions.
 
 {% include links.md %}
